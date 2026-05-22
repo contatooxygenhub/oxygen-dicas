@@ -1,5 +1,5 @@
 ---
-titulo: "Dra. Renata Almeida — advogada trabalhista"
+titulo: "Dra. Renata Almeida — advogada criminalista"
 subtitulo: "Atendeu várias situações da comunidade com competência e empatia."
 categoria: "Gerais"
 subcategoria: "Profissionais"
@@ -10,7 +10,7 @@ tags:
   - "trabalhista"
 info:
   nome_profissional: "Dra. Renata Almeida"
-  especialidade: "Direito do trabalho"
+  especialidade: "Direito do criminalista"
   contato: "(11) 98765-4321"
   endereco: "Av. Paulista, 2000 — sala 1407"
 publicado_em: 2026-05-22
