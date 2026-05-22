@@ -1,16 +1,15 @@
 ---
 titulo: "Co-Intelligence"
 subtitulo: "Como conviver com IA no trabalho sem entrar em pânico."
-categoria: "Livros"
+categoria: "Content+"
+subcategoria: "Livro"
+subtag: "Autoajuda"
 tags:
   - "ia"
   - "trabalho"
   - "produtividade"
 info:
   autor: "Ethan Mollick"
-  editora: "Portfolio"
-  ano: "2024"
-  onde_comprar: "amazon.com.br"
 publicado_em: 2026-05-20
 ---
 
