@@ -1,15 +1,15 @@
 ---
 titulo: "Industry"
 subtitulo: "Drama sobre jovens analistas em um banco em Londres. Não é só Wall Street."
-categoria: "Filmes & Séries"
+categoria: "Content+"
+subcategoria: "Série"
+subtag: "Drama"
 tags:
-  - "drama"
   - "finanças"
   - "trabalho"
 info:
   onde_assistir: "HBO Max"
-  ano: "2020 — em curso"
-  duracao: "3 temporadas, ~8 episódios cada"
+  temporadas: "3 temporadas, ~8 episódios cada"
   site: "hbo.com/industry"
 publicado_em: 2026-05-12
 ---
