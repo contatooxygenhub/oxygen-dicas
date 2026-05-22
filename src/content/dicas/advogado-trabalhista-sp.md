@@ -7,7 +7,7 @@ pais: "Brasil"
 cidade: "São Paulo"
 tags:
   - "advogada"
-  - "trabalhista"
+  - "criminalista"
 info:
   nome_profissional: "Dra. Renata Almeida"
   especialidade: "Direito do criminalista"
