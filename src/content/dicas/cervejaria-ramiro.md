@@ -1,10 +1,11 @@
 ---
 titulo: "Cervejaria Ramiro"
 subtitulo: "Marisqueira clássica lisboeta, ponto obrigatório pra quem vai à cidade."
-categoria: "Restaurantes"
-localizacao: "Lisboa, Portugal"
+categoria: "Viagens"
+subcategoria: "Restaurantes"
+pais: "Portugal"
+cidade: "Lisboa"
 tags:
-  - "viagens"
   - "marisco"
   - "tradicional"
   - "jantar"
