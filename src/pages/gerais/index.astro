@@ -10,7 +10,7 @@ const dicas = (await getCollection('dicas'))
   .filter(d => d.data.categoria === 'Gerais')
   .sort((a, b) => b.data.publicado_em.valueOf() - a.data.publicado_em.valueOf());
 
-const subcategorias = ['Profissionais', 'Casa', 'Beleza', 'Compras', 'Saúde', 'Pets'].map(s => ({
+const subcategorias = ['Profissionais', 'Casa', 'Beleza', 'Compras', 'Saúde', 'Pets', 'Espaços', 'Ferramentas'].map(s => ({
   nome: s,
   slug: slugify(s),
   count: dicas.filter(d => d.data.subcategoria === s).length
