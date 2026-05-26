@@ -3,22 +3,18 @@ import { getCollection } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
 import Card from '../../components/Card.astro';
 import { slugify, metaDoCard } from '../../utils/helpers';
-
 export async function getStaticPaths() {
-  const subs = ['Profissionais', 'Casa', 'Beleza', 'Compras', 'Saúde', 'Pets'];
+  const subs = ['Profissionais', 'Casa', 'Beleza', 'Compras', 'Saúde', 'Pets', 'Espaços', 'Ferramentas'];
   return subs.map(s => ({
     params: { subcategoria: slugify(s) },
     props: { subcategoria: s },
   }));
 }
-
 const { subcategoria } = Astro.props;
 const base = import.meta.env.BASE_URL;
-
 const dicas = (await getCollection('dicas'))
   .filter(d => d.data.categoria === 'Gerais' && d.data.subcategoria === subcategoria)
   .sort((a, b) => b.data.publicado_em.valueOf() - a.data.publicado_em.valueOf());
-
 const paisesSet = new Set<string>();
 dicas.forEach(d => { if (d.data.pais) paisesSet.add(d.data.pais); });
 const paises = Array.from(paisesSet).sort().map(p => ({
@@ -26,8 +22,7 @@ const paises = Array.from(paisesSet).sort().map(p => ({
   slug: slugify(p),
   count: dicas.filter(d => d.data.pais === p).length
 }));
-
-const subcategorias = ['Profissionais', 'Casa', 'Beleza', 'Compras', 'Saúde', 'Pets'];
+const subcategorias = ['Profissionais', 'Casa', 'Beleza', 'Compras', 'Saúde', 'Pets', 'Espaços', 'Ferramentas'];
 ---
 <Layout titulo={`Gerais · ${subcategoria}`}>
   <div class="container">
@@ -41,7 +36,6 @@ const subcategorias = ['Profissionais', 'Casa', 'Beleza', 'Compras', 'Saúde', '
       </p>
     </section>
   </div>
-
   <div class="container">
     <div class="filtros-wrap">
       <h2 class="filtros-titulo">Explorar por tipo</h2>
@@ -53,7 +47,6 @@ const subcategorias = ['Profissionais', 'Casa', 'Beleza', 'Compras', 'Saúde', '
           </a>
         ))}
       </div>
-
       {paises.length > 0 && (
         <>
           <div style="font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--oxy-ink-muted); font-weight: 600; margin: 20px 0 12px;">Filtrar por país</div>
@@ -68,7 +61,6 @@ const subcategorias = ['Profissionais', 'Casa', 'Beleza', 'Compras', 'Saúde', '
           </div>
         </>
       )}
-
       {dicas.length > 0 && (
         <div class="cards-grid" style="margin-top: 28px;">
           {dicas.map(dica => (
