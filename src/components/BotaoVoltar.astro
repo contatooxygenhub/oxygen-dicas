@@ -2,7 +2,7 @@
 // Componente de navegação "voltar uma página".
 // Usa history.back() do browser (volta pra página anterior real)
 // e cai num fallback (href) se a pessoa chegou via link direto.
-// Fica STICKY: gruda no topo da tela quando a pessoa rola.
+// Versão com position: fixed — gruda na viewport ao rolar, garantido.
 //
 // Uso: <BotaoVoltar fallbackHref={`${base}/viagens`} label="Viagens" />
 
@@ -14,7 +14,24 @@ export interface Props {
 const { fallbackHref, label } = Astro.props;
 ---
 
-<div class="botao-voltar-wrap">
+<!-- Placeholder pra reservar espaço no fluxo normal da página -->
+<div class="botao-voltar-placeholder">
+  <a
+    href={fallbackHref}
+    class="botao-voltar botao-voltar--inline"
+    data-fallback={fallbackHref}
+    aria-label={`Voltar para ${label}`}
+  >
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <line x1="19" y1="12" x2="5" y2="12"/>
+      <polyline points="12 19 5 12 12 5"/>
+    </svg>
+    <span>Voltar para {label}</span>
+  </a>
+</div>
+
+<!-- Versão fixa que aparece ao rolar -->
+<div class="botao-voltar-fixed" data-fixed-wrap>
   <a
     href={fallbackHref}
     class="botao-voltar"
@@ -30,24 +47,36 @@ const { fallbackHref, label } = Astro.props;
 </div>
 
 <style>
-  /* Wrapper fica sticky — gruda no topo ao rolar */
-  .botao-voltar-wrap {
-    position: sticky;
-    top: 0;
-    z-index: 50;
-    margin: 0 -16px 8px;
-    padding: 16px 16px 12px;
-    background: linear-gradient(
-      to bottom,
-      var(--oxy-cream, #fcf5ef) 0%,
-      var(--oxy-cream, #fcf5ef) 85%,
-      rgba(252, 245, 239, 0) 100%
-    );
+  .botao-voltar-placeholder {
+    margin: 24px 0 8px;
+  }
+
+  /* Versão fixa: gruda na viewport */
+  .botao-voltar-fixed {
+    position: fixed;
+    top: 80px; /* abaixo do header */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 100;
+    opacity: 0;
     pointer-events: none;
+    transition: opacity 0.25s ease, top 0.25s ease;
+  }
+
+  .botao-voltar-fixed.is-visible {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  /* Ajuste em telas largas: alinha ao container */
+  @media (min-width: 1024px) {
+    .botao-voltar-fixed {
+      left: max(50%, calc(50% - 540px));
+      transform: translateX(0);
+    }
   }
 
   .botao-voltar {
-    pointer-events: auto;
     display: inline-flex;
     align-items: center;
     gap: 8px;
@@ -62,7 +91,7 @@ const { fallbackHref, label } = Astro.props;
     transition: all 0.15s ease;
     cursor: pointer;
     line-height: 1;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   }
 
   .botao-voltar:hover,
@@ -70,7 +99,7 @@ const { fallbackHref, label } = Astro.props;
     background: var(--oxy-coral, #e85a4f);
     color: #fff;
     transform: translateX(-2px);
-    box-shadow: 0 2px 8px rgba(232, 90, 79, 0.2);
+    box-shadow: 0 4px 12px rgba(232, 90, 79, 0.25);
   }
 
   .botao-voltar svg {
@@ -85,8 +114,7 @@ const { fallbackHref, label } = Astro.props;
 </style>
 
 <script>
-  // Intercepta o clique pra usar history.back() quando tiver histórico real.
-  // Fallback pro href se chegou direto (sem histórico interno do site).
+  // 1. Intercepta clique: history.back() se veio do mesmo site, fallback caso contrário
   document.querySelectorAll('.botao-voltar').forEach((btn) => {
     btn.addEventListener('click', (e) => {
       const referrer = document.referrer;
@@ -98,4 +126,26 @@ const { fallbackHref, label } = Astro.props;
       }
     });
   });
+
+  // 2. Mostra o botão fixo quando o botão inline sai da tela
+  const placeholder = document.querySelector('.botao-voltar-placeholder');
+  const fixedWrap = document.querySelector('[data-fixed-wrap]');
+
+  if (placeholder && fixedWrap) {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          // Se o botão inline NÃO está visível, mostra o fixo
+          if (!entry.isIntersecting) {
+            fixedWrap.classList.add('is-visible');
+          } else {
+            fixedWrap.classList.remove('is-visible');
+          }
+        });
+      },
+      { threshold: 0 }
+    );
+
+    observer.observe(placeholder);
+  }
 </script>
