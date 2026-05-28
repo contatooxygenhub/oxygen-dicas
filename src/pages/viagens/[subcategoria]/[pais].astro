@@ -2,19 +2,17 @@
 import { getCollection } from 'astro:content';
 import Layout from '../../../layouts/Layout.astro';
 import Card from '../../../components/Card.astro';
+import BotaoVoltar from '../../../components/BotaoVoltar.astro';
 import { slugify, metaDoCard } from '../../../utils/helpers';
-
 export async function getStaticPaths() {
   const dicas = await getCollection('dicas');
   const subs = ['Passeios', 'Lojas', 'Restaurantes', 'Hospedagem', 'Roteiro', 'Destino', 'Bares e cafés', 'Outros'];
-
   const paths: any[] = [];
   for (const sub of subs) {
     const paisesSet = new Set<string>();
     dicas
       .filter(d => d.data.categoria === 'Viagens' && d.data.subcategoria === sub && d.data.pais)
       .forEach(d => paisesSet.add(d.data.pais!));
-
     paisesSet.forEach(pais => {
       paths.push({
         params: { subcategoria: slugify(sub), pais: slugify(pais) },
@@ -22,13 +20,10 @@ export async function getStaticPaths() {
       });
     });
   }
-
   return paths;
 }
-
 const { subcategoria, pais } = Astro.props;
 const base = import.meta.env.BASE_URL;
-
 const dicas = (await getCollection('dicas'))
   .filter(d =>
     d.data.categoria === 'Viagens' &&
@@ -36,7 +31,6 @@ const dicas = (await getCollection('dicas'))
     d.data.pais === pais
   )
   .sort((a, b) => b.data.publicado_em.valueOf() - a.data.publicado_em.valueOf());
-
 // Cidades pra filtro
 const cidadesSet = new Set<string>();
 dicas.forEach(d => { if (d.data.cidade) cidadesSet.add(d.data.cidade); });
@@ -48,7 +42,8 @@ const cidades = Array.from(cidadesSet).sort().map(c => ({
 ---
 <Layout titulo={`Viagens · ${subcategoria} em ${pais}`}>
   <div class="container">
-    <nav class="breadcrumb" style="padding-top: 30px;">
+    <BotaoVoltar fallbackHref={`${base}/viagens/${slugify(subcategoria)}`} label={subcategoria} />
+    <nav class="breadcrumb" style="padding-top: 12px;">
       <a href={base}>Início</a>
       <span class="breadcrumb-sep">/</span>
       <a href={`${base}/viagens`}>Viagens</a>
@@ -57,7 +52,6 @@ const cidades = Array.from(cidadesSet).sort().map(c => ({
       <span class="breadcrumb-sep">/</span>
       <span class="breadcrumb-current">{pais}</span>
     </nav>
-
     <section class="preambulo" style="padding-top: 30px;">
       <div class="preambulo-eyebrow">{subcategoria} · {pais}</div>
       <h1 class="preambulo-titulo">{subcategoria}<br />em {pais}</h1>
@@ -66,7 +60,6 @@ const cidades = Array.from(cidadesSet).sort().map(c => ({
       </p>
     </section>
   </div>
-
   <div class="container">
     <div class="filtros-wrap">
       {cidades.length > 1 && (
@@ -83,7 +76,6 @@ const cidades = Array.from(cidadesSet).sort().map(c => ({
           </div>
         </>
       )}
-
       {dicas.length > 0 && (
         <div class="cards-grid" style="margin-top: 28px;">
           {dicas.map(dica => (
