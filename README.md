@@ -1,4 +1,4 @@
-# Oxygen Dicas
+# Oxygen Dicass
 
 Repositório de dicas da comunidade Oxygen Club — restaurantes, viagens, livros, eventos, filmes/séries e podcasts curados pelos assinantes.
 
