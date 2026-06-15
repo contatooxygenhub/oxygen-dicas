@@ -8,7 +8,7 @@ tags:
 info:
   nome_profissional: "Dra. Cinira Soledade"
   especialidade: "Reumatologia (fibromialgia)"
-  instagram: "https://www.instagram.com/dracinirasoledade/"
+  instagram: "dracinirasoledade"
   bairro: "Campinas/SP (telemedicina)"
   indicado_por: "Helena Vilela"
 publicado_em: 2026-06-15
