@@ -9,7 +9,7 @@ tags:
 info:
   nome_profissional: "Aline Thomazinho (Empório Romã)"
   especialidade: "Catering para eventos e reuniões"
-  instagram: "https://www.instagram.com/_emporioroma_"
+  instagram: "_emporioroma_"
   contato: "+55 11 99495-2216"
   indicado_por: "Ludmila Oliveira"
 publicado_em: 2026-06-15
