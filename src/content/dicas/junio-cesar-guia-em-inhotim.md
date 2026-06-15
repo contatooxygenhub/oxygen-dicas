@@ -9,7 +9,7 @@ tags:
 info:
   nome_profissional: "Júnio César"
   especialidade: "Guia em Inhotim"
-  instagram: "https://www.instagram.com/juniocesarinhotim"
+  instagram: "juniocesarinhotim"
   indicado_por: "Ana Emilia"
 publicado_em: 2026-06-15
 destaque: false
