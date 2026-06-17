@@ -30,6 +30,7 @@ const dicas = defineCollection({
     subtag: z.string().optional(),
     pais: z.string().optional(),
     cidade: z.string().optional(),
+    regiao: z.string().optional(),
     tags: z.array(z.string()).default([]),
 
     info: z.object({
