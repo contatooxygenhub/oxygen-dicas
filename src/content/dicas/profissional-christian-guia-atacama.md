@@ -1,8 +1,8 @@
 ---
 titulo: "Christian — guia no Atacama"
 subtitulo: "Guia do Explora que também faz passeios particulares no Atacama."
-categoria: "Gerais"
-subcategoria: "Profissionais"
+categoria: "Viagens"
+subcategoria: "Guia"
 pais: "Chile"
 tags:
   - "atacama"

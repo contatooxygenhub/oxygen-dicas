@@ -1,8 +1,8 @@
 ---
 titulo: "Gustavo — guia em Florença"
 subtitulo: "Guia especializado em história, para tours em Florença."
-categoria: "Gerais"
-subcategoria: "Profissionais"
+categoria: "Viagens"
+subcategoria: "Guia"
 pais: "Itália"
 cidade: "Florença"
 tags:

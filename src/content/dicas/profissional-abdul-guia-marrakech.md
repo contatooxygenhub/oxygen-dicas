@@ -1,8 +1,8 @@
 ---
 titulo: "Abdul — guia em Marrakech"
 subtitulo: "Guia distinto de Marrakech, elogiado por mais de uma viajante do grupo."
-categoria: "Gerais"
-subcategoria: "Profissionais"
+categoria: "Viagens"
+subcategoria: "Guia"
 pais: "Marrocos"
 cidade: "Marrakech"
 tags:

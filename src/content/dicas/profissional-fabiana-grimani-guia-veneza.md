@@ -1,8 +1,8 @@
 ---
 titulo: "Fabiana Grimani — guia em Veneza"
 subtitulo: "Historiadora brasileira que faz tours guiados em Veneza, inclusive na Bienal."
-categoria: "Gerais"
-subcategoria: "Profissionais"
+categoria: "Viagens"
+subcategoria: "Guia"
 pais: "Itália"
 cidade: "Veneza"
 tags:

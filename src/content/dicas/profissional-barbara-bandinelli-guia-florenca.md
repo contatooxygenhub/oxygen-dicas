@@ -1,8 +1,8 @@
 ---
 titulo: "Barbara Bandinelli — guia em Florença"
 subtitulo: "Guia querida que já atendeu o grupo várias vezes em Florença."
-categoria: "Gerais"
-subcategoria: "Profissionais"
+categoria: "Viagens"
+subcategoria: "Guia"
 pais: "Itália"
 cidade: "Florença"
 tags:

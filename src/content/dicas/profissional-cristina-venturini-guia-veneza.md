@@ -1,8 +1,8 @@
 ---
 titulo: "Cristina Venturini — guia em Veneza"
 subtitulo: "Guia em Veneza indicada no grupo."
-categoria: "Gerais"
-subcategoria: "Profissionais"
+categoria: "Viagens"
+subcategoria: "Guia"
 pais: "Itália"
 cidade: "Veneza"
 tags:

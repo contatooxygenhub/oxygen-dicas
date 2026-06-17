@@ -1,7 +1,9 @@
 ---
 titulo: "Guil Damasceno — Guia em Inhotim"
-categoria: "Gerais"
-subcategoria: "Profissionais"
+categoria: "Viagens"
+subcategoria: "Guia"
+pais: "Brasil"
+cidade: "Inhotim"
 tags:
   - "Profissionais"
   - "Guia"

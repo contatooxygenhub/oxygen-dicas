@@ -1,8 +1,8 @@
 ---
 titulo: "Antonella / Benarrivati — agência na Itália"
 subtitulo: "Brasileira na Itália há mais de 20 anos, com agência que organiza viagens."
-categoria: "Gerais"
-subcategoria: "Profissionais"
+categoria: "Viagens"
+subcategoria: "Agência"
 pais: "Itália"
 tags:
   - "italia"

@@ -1,8 +1,8 @@
 ---
 titulo: "Mel Rolan — travel designer"
 subtitulo: "Travel designer indicada para viagem a Paris."
-categoria: "Gerais"
-subcategoria: "Profissionais"
+categoria: "Viagens"
+subcategoria: "Agência"
 pais: "França"
 cidade: "Paris"
 tags:

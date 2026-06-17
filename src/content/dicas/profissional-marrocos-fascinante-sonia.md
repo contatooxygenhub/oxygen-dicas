@@ -1,8 +1,8 @@
 ---
 titulo: "Marrocos Fascinante — Sônia Medeiros"
 subtitulo: "Carioca que mora no Marrocos e organiza viagens pelo país."
-categoria: "Gerais"
-subcategoria: "Profissionais"
+categoria: "Viagens"
+subcategoria: "Agência"
 pais: "Marrocos"
 tags:
   - "marrocos"

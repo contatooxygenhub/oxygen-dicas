@@ -1,8 +1,8 @@
 ---
 titulo: "Abdel — guia no Egito"
 subtitulo: "Egiptólogo que fala português, atento aos interesses das crianças."
-categoria: "Gerais"
-subcategoria: "Profissionais"
+categoria: "Viagens"
+subcategoria: "Guia"
 pais: "Egito"
 tags:
   - "egito"

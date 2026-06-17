@@ -1,7 +1,7 @@
 ---
 titulo: "Mi Casa Buffet — Catering corporativo"
 categoria: "Gerais"
-subcategoria: "Profissionais"
+subcategoria: "Catering"
 tags:
   - "Profissionais"
   - "Catering"

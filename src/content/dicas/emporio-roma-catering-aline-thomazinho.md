@@ -1,7 +1,7 @@
 ---
 titulo: "Empório Romã — Catering (Aline Thomazinho)"
 categoria: "Gerais"
-subcategoria: "Profissionais"
+subcategoria: "Catering"
 tags:
   - "Profissionais"
   - "Catering"

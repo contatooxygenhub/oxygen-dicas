@@ -1,8 +1,8 @@
 ---
 titulo: "G Bike Tours — Gabriel (Chile)"
 subtitulo: "Faz Cajón del Maipo e também Atacama."
-categoria: "Gerais"
-subcategoria: "Profissionais"
+categoria: "Viagens"
+subcategoria: "Guia"
 pais: "Chile"
 tags:
   - "chile"

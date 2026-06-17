@@ -1,8 +1,9 @@
 ---
 titulo: "Jacqueline Papaléo — agente de turismo"
 subtitulo: "Agente com olhar criterioso e empático para as necessidades da viagem."
-categoria: "Gerais"
-subcategoria: "Profissionais"
+categoria: "Viagens"
+subcategoria: "Agência"
+pais: "Brasil"
 tags:
   - "agencia"
 info:

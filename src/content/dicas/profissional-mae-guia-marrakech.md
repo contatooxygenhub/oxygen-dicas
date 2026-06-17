@@ -1,8 +1,8 @@
 ---
 titulo: "Mae — guia em Marrakech"
 subtitulo: "Guia que fala português, em Marrakech."
-categoria: "Gerais"
-subcategoria: "Profissionais"
+categoria: "Viagens"
+subcategoria: "Guia"
 pais: "Marrocos"
 cidade: "Marrakech"
 tags:

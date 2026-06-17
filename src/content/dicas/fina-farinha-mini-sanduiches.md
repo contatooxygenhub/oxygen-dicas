@@ -1,7 +1,7 @@
 ---
 titulo: "Fina Farinha — Mini sanduíches"
 categoria: "Gerais"
-subcategoria: "Profissionais"
+subcategoria: "Catering"
 tags:
   - "Profissionais"
   - "Catering"
