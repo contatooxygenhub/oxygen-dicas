@@ -67,6 +67,14 @@ const subLink = `${base}/${catSlug}/${subSlug}`;
     </div>
     <!-- Bloco de info estruturada -->
     <InfoBlock info={d.info} subcategoria={d.subcategoria} />
+    <!-- Tags (também é encontrável na busca por estes termos) -->
+    {d.tags && d.tags.length > 0 && (
+      <div class="detalhe-tags">
+        {d.tags.map(tag => (
+          <a href={`${base}/busca?q=${encodeURIComponent(tag)}`} class="detalhe-tag">#{tag}</a>
+        ))}
+      </div>
+    )}
     <!-- Footer da dica -->
     <div class="detalhe-footer">
       <span>Indicação da comunidade Oxygen</span>
