@@ -21,31 +21,33 @@ export function metaDoCard(dica: any): string {
   const d = dica.data;
   const info = d.info || {};
 
-  // 1. Geografia: melhor pista quando o lugar importa (Viagens, Gerais com local)
-  if (d.cidade && d.pais) return `${d.cidade}, ${d.pais}`;
-  if (d.cidade) return d.cidade;
-  if (d.pais) return d.pais;
+  // O eyebrow (textinho acima do título) tem um significado FIXO por categoria,
+  // pra que o leitor sempre saiba o que esperar daquele slot. Nunca mostra o
+  // autor (já está no título) nem o indicado_por (esse vai só na página de
+  // detalhe). Cada categoria tem sua hierarquia e SEMPRE termina na
+  // subcategoria, então o eyebrow nunca fica vazio nem mostra uma pessoa solta.
 
-  // 2. Subtag (refinamento explícito da dica)
-  if (d.subtag) return d.subtag;
+  switch (d.categoria) {
+    // VIAGENS → onde fica no mundo: País → Cidade → Região
+    case 'Viagens':
+      return d.pais || d.cidade || d.regiao || d.subcategoria;
 
-  // 3. Content+: autoria/origem do conteúdo
-  if (info.autor) return info.autor;
-  if (info.onde_assistir) return info.onde_assistir;
-  if (info.onde_ler) return info.onde_ler;
-  if (info.plataforma) return info.plataforma;
+    // CONTENT+ → onde consumir / o que é. Livro não tem origem única
+    // (varia muito: livraria, Amazon, Kindle...), então marca o tipo.
+    case 'Content+':
+      if (d.subcategoria === 'Livro') return 'Livro';
+      return info.onde_assistir || info.plataforma || info.onde_ler || d.subcategoria;
 
-  // 4. Gerais sem geografia: especialidade ou nome do profissional/marca
-  if (info.especialidade) return info.especialidade;
-  if (info.nome_profissional) return info.nome_profissional;
+    // GERAIS → que tipo de serviço: especialidade → tipo (subcategoria)
+    case 'Gerais':
+      return info.especialidade || d.subcategoria;
 
-  // 5. IRL sem geografia explícita: local do evento
-  if (info.local) return info.local;
+    // IRL → quando/onde acontece: Local · Data → Local → Data → subcategoria
+    case 'IRL':
+      if (info.local && info.data) return `${info.local} · ${info.data}`;
+      return info.local || info.data || d.subcategoria;
 
-  // 6. Último recurso: indicado por
-  if (info.indicado_por && info.indicado_por !== 'Membro da comunidade') {
-    return `Indicado por ${info.indicado_por}`;
+    default:
+      return d.subcategoria;
   }
-
-  return '';
 }
