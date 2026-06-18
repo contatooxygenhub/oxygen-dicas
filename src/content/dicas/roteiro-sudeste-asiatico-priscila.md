@@ -7,6 +7,9 @@ regiao: "Sudeste Asiático"
 tags:
   - "natureza"
   - "cultura"
+  - "sudeste-asiatico"
+  - "mochilao"
+  - "asia"
 info:
   indicado_por: "Priscila Freitas"
 publicado_em: 2025-12-15

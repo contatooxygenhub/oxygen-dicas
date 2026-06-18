@@ -3,8 +3,9 @@ titulo: "Tudo é Projeto — Paulo Mendes da Rocha"
 categoria: "Content+"
 subcategoria: "Documentário"
 tags:
-  - "Documentário"
-  - "Arquitetura"
+  - "arquitetura"
+  - "biografia"
+  - "design"
 info:
   onde_assistir: "Sesc Digital (gratuito)"
   site: "https://sesc.digital/conteudo/filmes/tudo-e-projeto-paulo-mendes-da-rocha"

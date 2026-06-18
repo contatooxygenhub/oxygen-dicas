@@ -8,6 +8,8 @@ cidade: "Hanói"
 tags:
   - "natureza"
   - "cultura"
+  - "vietna"
+  - "hanoi"
 info:
   duracao_sugerida: "Pelo menos 10 dias, incluindo Sapa e Ho Chi Minh"
   indicado_por: "Priscila Freitas"

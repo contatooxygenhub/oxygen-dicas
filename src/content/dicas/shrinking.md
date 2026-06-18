@@ -3,8 +3,9 @@ titulo: "Shrinking"
 categoria: "Content+"
 subcategoria: "Série"
 tags:
-  - "Série"
-  - "Comédia"
+  - "comedia"
+  - "apple-tv"
+  - "drama"
 info:
   plataforma: "Apple TV+"
   indicado_por: "Paula Jacob, Mari Savaget, Larissa Arruy"

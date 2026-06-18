@@ -7,7 +7,10 @@ pais: "Itália"
 cidade: "Roma"
 tags:
   - "roma"
-  - "restaurantes"
+  - "restaurante"
+  - "italia"
+  - "gastronomia"
+  - "trattoria"
 info:
   indicado_por: "Marina Padula"
 publicado_em: 2026-03-15

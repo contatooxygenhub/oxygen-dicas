@@ -8,6 +8,9 @@ cidade: "Singapura"
 tags:
   - "natureza"
   - "familia"
+  - "singapura"
+  - "cultura"
+  - "cidade"
 info:
   duracao_sugerida: "Pelo menos 4 dias"
   indicado_por: "Priscila Freitas"

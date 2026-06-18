@@ -3,8 +3,9 @@ titulo: "Ruptura (Severance)"
 categoria: "Content+"
 subcategoria: "Série"
 tags:
-  - "Série"
-  - "Suspense"
+  - "suspense"
+  - "apple-tv"
+  - "ficcao-cientifica"
 info:
   plataforma: "Apple TV+"
   indicado_por: "Analídia Ferri"

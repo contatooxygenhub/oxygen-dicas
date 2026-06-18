@@ -3,8 +3,10 @@ titulo: "The Year of Magical Thinking — Joan Didion"
 categoria: "Content+"
 subcategoria: "Livro"
 tags:
-  - "Livro"
-  - "Literatura"
+  - "literatura"
+  - "memoir"
+  - "luto"
+  - "nao-ficcao"
 info:
   autor: "Joan Didion"
   indicado_por: "Larissa Arruy"

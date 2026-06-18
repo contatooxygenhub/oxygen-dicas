@@ -3,8 +3,9 @@ titulo: "Tasmânia — Paolo Giordano"
 categoria: "Content+"
 subcategoria: "Livro"
 tags:
-  - "Livro"
-  - "Literatura"
+  - "literatura"
+  - "ficcao"
+  - "italiano"
 info:
   autor: "Paolo Giordano"
   indicado_por: "Paula Jacob"

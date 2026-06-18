@@ -8,7 +8,8 @@ cidade: "Paris"
 tags:
   - "paris"
   - "arte"
-  - "museus"
+  - "museu"
+  - "franca"
 info:
   indicado_por: "Andrea Janér"
 publicado_em: 2026-02-02
