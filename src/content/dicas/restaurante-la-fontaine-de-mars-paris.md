@@ -2,7 +2,7 @@
 titulo: "La Fontaine de Mars"
 subtitulo: "Bistrô tradicional e de bairro em Paris."
 categoria: "Viagens"
-subcategoria: "Restaurantes"
+subcategoria: "Restaurantes, bares e cafés"
 pais: "França"
 cidade: "Paris"
 tags:

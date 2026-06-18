@@ -10,6 +10,7 @@ tags:
   - "restaurante"
   - "bar"
   - "estados-unidos"
+  - "cafe"
 info:
   indicado_por: "Isa Rezende"
 publicado_em: 2026-04-28

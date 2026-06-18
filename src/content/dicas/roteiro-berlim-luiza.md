@@ -13,6 +13,7 @@ tags:
   - "loja"
   - "passeio"
   - "alemanha"
+  - "cafe"
 info:
   indicado_por: "Luiza Secco"
 publicado_em: 2026-04-15

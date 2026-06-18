@@ -2,7 +2,7 @@
 titulo: "La Petite Ferme"
 subtitulo: "Vinícola na região da Garden Route / Cape Winelands."
 categoria: "Viagens"
-subcategoria: "Restaurantes"
+subcategoria: "Restaurantes, bares e cafés"
 pais: "África do Sul"
 tags:
   - "vinho"

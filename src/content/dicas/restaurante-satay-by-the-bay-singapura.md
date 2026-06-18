@@ -2,7 +2,7 @@
 titulo: "Satay by the Bay"
 subtitulo: "Praça de alimentação de street food no Gardens by the Bay, em Singapura."
 categoria: "Viagens"
-subcategoria: "Restaurantes"
+subcategoria: "Restaurantes, bares e cafés"
 pais: "Singapura"
 cidade: "Singapura"
 tags:

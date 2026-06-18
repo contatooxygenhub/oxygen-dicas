@@ -10,6 +10,7 @@ tags:
   - "museu"
   - "dinamarca"
   - "copenhagen"
+  - "restaurante"
 info:
   indicado_por: "Andrea Janér"
 publicado_em: 2025-05-08

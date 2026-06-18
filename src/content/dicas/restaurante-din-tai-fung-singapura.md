@@ -2,7 +2,7 @@
 titulo: "Din Tai Fung"
 subtitulo: "Rede taiwanesa famosa pelos dumplings, com unidades por toda a ilha de Singapura."
 categoria: "Viagens"
-subcategoria: "Restaurantes"
+subcategoria: "Restaurantes, bares e cafés"
 pais: "Singapura"
 cidade: "Singapura"
 tags:

@@ -2,7 +2,7 @@
 titulo: "Pot Luck Club"
 subtitulo: "Restaurante de pratos para compartilhar no topo do Old Biscuit Mill, em Woodstock."
 categoria: "Viagens"
-subcategoria: "Restaurantes"
+subcategoria: "Restaurantes, bares e cafés"
 pais: "África do Sul"
 cidade: "Cape Town"
 tags:

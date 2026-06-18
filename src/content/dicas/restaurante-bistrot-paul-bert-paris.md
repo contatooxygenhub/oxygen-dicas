@@ -2,7 +2,7 @@
 titulo: "Bistrot Paul Bert"
 subtitulo: "Bistrô parisiense, predileto para carne."
 categoria: "Viagens"
-subcategoria: "Restaurantes"
+subcategoria: "Restaurantes, bares e cafés"
 pais: "França"
 cidade: "Paris"
 tags:

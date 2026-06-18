@@ -11,6 +11,7 @@ tags:
   - "italia"
   - "gastronomia"
   - "trattoria"
+  - "gelateria"
 info:
   indicado_por: "Marina Padula"
 publicado_em: 2026-03-15

@@ -2,7 +2,7 @@
 titulo: "Katz Orange"
 subtitulo: "Restaurante em Berlim; reserva com antecedência."
 categoria: "Viagens"
-subcategoria: "Restaurantes"
+subcategoria: "Restaurantes, bares e cafés"
 pais: "Alemanha"
 cidade: "Berlim"
 tags:

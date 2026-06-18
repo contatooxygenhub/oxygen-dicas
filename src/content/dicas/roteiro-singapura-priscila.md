@@ -11,6 +11,8 @@ tags:
   - "singapura"
   - "cultura"
   - "cidade"
+  - "bar"
+  - "restaurante"
 info:
   duracao_sugerida: "Pelo menos 4 dias"
   indicado_por: "Priscila Freitas"

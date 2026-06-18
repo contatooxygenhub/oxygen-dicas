@@ -2,7 +2,7 @@
 titulo: "Hutong"
 subtitulo: "Restaurante chinês com vista para o Victoria Harbour, em Tsim Sha Tsui."
 categoria: "Viagens"
-subcategoria: "Restaurantes"
+subcategoria: "Restaurantes, bares e cafés"
 pais: "China"
 cidade: "Hong Kong"
 tags:

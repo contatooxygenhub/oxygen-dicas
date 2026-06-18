@@ -2,7 +2,7 @@
 titulo: "Fyn"
 subtitulo: "Restaurante de menu degustação que une técnica japonesa e ingredientes sul-africanos, no centro de Cape Town."
 categoria: "Viagens"
-subcategoria: "Restaurantes"
+subcategoria: "Restaurantes, bares e cafés"
 pais: "África do Sul"
 cidade: "Cape Town"
 tags:

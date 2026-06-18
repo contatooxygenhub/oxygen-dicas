@@ -10,6 +10,9 @@ tags:
   - "museu"
   - "dinamarca"
   - "copenhagen"
+  - "cafe"
+  - "bar"
+  - "restaurante"
 info:
   indicado_por: "Isa Rezende"
 publicado_em: 2025-05-08

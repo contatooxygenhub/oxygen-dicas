@@ -2,7 +2,7 @@
 titulo: "La Colombe"
 subtitulo: "Restaurante com menu degustação em Cape Town."
 categoria: "Viagens"
-subcategoria: "Restaurantes"
+subcategoria: "Restaurantes, bares e cafés"
 pais: "África do Sul"
 cidade: "Cape Town"
 tags:

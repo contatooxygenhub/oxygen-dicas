@@ -10,6 +10,8 @@ tags:
   - "familia"
   - "coreia-do-sul"
   - "seul"
+  - "cafe"
+  - "restaurante"
 info:
   indicado_por: "Fabiana Caporal"
 publicado_em: 2025-10-25
