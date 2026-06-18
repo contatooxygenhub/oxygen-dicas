@@ -12,8 +12,8 @@ const dicas = defineCollection({
     // Subcategoria (nível 2) — lista expandida
     subcategoria: z.enum([
       // Viagens
-      'Passeios', 'Lojas', 'Restaurantes', 'Hospedagem',
-      'Roteiro', 'Destino', 'Bares e cafés', 'Guia', 'Agência', 'Outros',
+      'Passeios', 'Lojas', 'Restaurantes, bares e cafés', 'Hospedagem',
+      'Roteiro', 'Guia', 'Agência', 'Outros',
 
       // Content+
       'Podcast', 'Filme', 'Série', 'Documentário', 'Livro',
