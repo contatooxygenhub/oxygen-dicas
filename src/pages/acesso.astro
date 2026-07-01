@@ -90,6 +90,9 @@ const accessApi =
         if (data && data.eligible === true) {
           localStorage.setItem('oxygenDicasAccess', '1');
           localStorage.setItem('oxygenDicasEmail', email);
+          // Marca quando o acesso foi validado. O portão em Layout.astro
+          // revalida contra a API quando esse timestamp fica mais velho que o TTL.
+          localStorage.setItem('oxygenDicasCheckedAt', String(Date.now()));
           // Redireciona pra home do site (na raiz é '/').
           window.location.href = home;
           return;

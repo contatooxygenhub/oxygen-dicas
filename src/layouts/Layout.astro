@@ -11,6 +11,11 @@ const tituloFinal = titulo === 'Dicas' ? 'Dicas · Oxygen Club' : `${titulo} · 
 // vira '/', em subpasta vira '/a-subpasta'.
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const home = base || '/';
+// Mesmo endpoint (e mesmo padrão) usado em acesso.astro, pra manter os dois em
+// sincronia. O portão abaixo revalida o acesso contra ele periodicamente.
+const accessApi =
+  import.meta.env.PUBLIC_ACCESS_API ||
+  'https://admin.oxygenhub.com.br/api/dicas-access';
 ---
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -19,18 +24,73 @@ const home = base || '/';
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <!-- Portão de acesso (friction-level): redireciona quem ainda não validou o email
        para a página de acesso. Roda o mais cedo possível, antes do conteúdo, pra
-       minimizar o flash. O conteúdo ainda chega ao navegador — é proposital. -->
-  <script is:inline define:vars={{ base }}>
+       minimizar o flash. O conteúdo ainda chega ao navegador — é proposital.
+       Além disso, revalida o email contra a API no máximo uma vez a cada 24h (TTL),
+       pra que revogações de acesso (grupo removido no CursEduca) passem a valer em
+       cerca de um dia. Erro de rede na revalidação falha aberto (não bloqueia). -->
+  <script is:inline define:vars={{ base, accessApi }}>
     (function () {
+      // TTL de 24h, casando com o snapshot diário do CursEduca.
+      var TTL = 24 * 60 * 60 * 1000;
       try {
-        if (localStorage.getItem('oxygenDicasAccess') === '1') return;
         // base pode vir com ou sem barra final; normaliza removendo a barra do fim.
         var raiz = base.replace(/\/$/, '');
         var rotaAcesso = raiz + '/acesso';
         var path = window.location.pathname.replace(/\/$/, '');
-        // Já está na página de acesso? Não redireciona (evita loop).
+        // Já está na página de acesso? Não guarda/revalida (evita loop e flash).
         if (path === rotaAcesso) return;
-        window.location.replace(rotaAcesso);
+
+        var acesso = localStorage.getItem('oxygenDicasAccess');
+        var email = localStorage.getItem('oxygenDicasEmail');
+        var checkedAt = parseInt(localStorage.getItem('oxygenDicasCheckedAt') || '', 10);
+
+        // Caminho rápido: acesso liberado e validado há menos que o TTL.
+        // Libera na hora, sem flash e sem fetch.
+        if (acesso === '1' && checkedAt && (Date.now() - checkedAt) < TTL) return;
+
+        // Sem email guardado não dá pra revalidar: manda pro portão.
+        if (!email) {
+          window.location.replace(rotaAcesso);
+          return;
+        }
+
+        // Caminho lento (cache velho ou ausente): esconde o conteúdo enquanto
+        // revalida, revelando de novo em caso de sucesso ou erro de rede.
+        var root = document.documentElement;
+        root.style.visibility = 'hidden';
+        function revelar() {
+          root.style.visibility = '';
+        }
+
+        fetch(accessApi, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email: email }),
+        })
+          .then(function (res) {
+            if (!res.ok) throw new Error('resposta não OK');
+            return res.json();
+          })
+          .then(function (data) {
+            if (data && data.eligible === true) {
+              // Continua elegível: renova o timestamp e libera.
+              localStorage.setItem('oxygenDicasAccess', '1');
+              localStorage.setItem('oxygenDicasCheckedAt', String(Date.now()));
+              revelar();
+              return;
+            }
+            // Resposta explícita de não-elegível: revoga e volta pro portão.
+            localStorage.removeItem('oxygenDicasAccess');
+            localStorage.removeItem('oxygenDicasEmail');
+            localStorage.removeItem('oxygenDicasCheckedAt');
+            window.location.replace(rotaAcesso);
+          })
+          .catch(function () {
+            // Erro de rede (não um "não-elegível" explícito): falha aberto pra
+            // não trancar membros legítimos numa instabilidade da API. O snapshot
+            // diário + a próxima revalidação bem-sucedida seguem valendo.
+            revelar();
+          });
       } catch (e) {
         // localStorage indisponível: não bloqueia o acesso.
       }
